@@ -1,0 +1,22 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+.DS_Store
+.env
+
+# Model checkpoints: download instead of committing
+*.pt
+*.pth
+*.bin
+*.safetensors
+checkpoints/
+
+# PINT dataset: not public, do not commit
+**/*pint*.yaml
+**/*pint*.yml
+**/*pint*.json
+**/*PINT*.yaml
+**/*PINT*.yml
+**/*PINT*.json
