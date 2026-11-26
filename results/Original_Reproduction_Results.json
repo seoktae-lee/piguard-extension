@@ -1,0 +1,22 @@
+{
+    "model": "leolee99/PIGuard",
+    "evaluation": "original_reproduction",
+    "unit": "percent",
+    "PINT_included": false,
+    "results": {
+        "WildGuard": 76.11,
+        "BIPIA": {
+            "Text": 38.67,
+            "Code": 98.0,
+            "Overall": 68.33
+        },
+        "NotInject": {
+            "One": 94.69,
+            "Two": 89.38,
+            "Three": 81.42,
+            "Overall": 88.5
+        }
+    },
+    "macro_average": 77.65,
+    "average_method": "Equal weighting of three dataset groups"
+}

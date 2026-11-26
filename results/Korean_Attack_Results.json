@@ -1,0 +1,18 @@
+{
+    "direct_override": {
+        "total": 30,
+        "accuracy": 0.43333333333333335
+    },
+    "system_prompt_extraction": {
+        "total": 30,
+        "accuracy": 0.13333333333333333
+    },
+    "role_and_policy_override": {
+        "total": 30,
+        "accuracy": 0.5
+    },
+    "indirect_document_injection": {
+        "total": 30,
+        "accuracy": 0.26666666666666666
+    }
+}
