@@ -1,0 +1,667 @@
+{
+  "protocol": "PIGuard eval.py, PINT excluded",
+  "seed": 42,
+  "train_size": 76735,
+  "models": {
+    "tfidf_word_lr": {
+      "train_size": 76735,
+      "in_distribution_acc": 96.06,
+      "summary": {
+        "Over-defense ACC (NotInject)": 87.61,
+        "Benign ACC (WildGuard)": 84.35,
+        "Injection ACC (BIPIA)": 73.34,
+        "Average": 81.77,
+        "Over-defense ACC (NotInject, English only)": 83.51
+      },
+      "per_set": {
+        "NotInject_one": 89.38,
+        "NotInject_two": 92.04,
+        "NotInject_three": 81.42,
+        "WildGuard": 84.35,
+        "BIPIA_text": 46.67,
+        "BIPIA_code": 100.0
+      },
+      "per_set_95ci": {
+        "NotInject_one": [
+          82.35,
+          93.82
+        ],
+        "NotInject_two": [
+          85.55,
+          95.75
+        ],
+        "NotInject_three": [
+          73.25,
+          87.51
+        ],
+        "WildGuard": [
+          81.93,
+          86.5
+        ],
+        "BIPIA_text": [
+          35.82,
+          57.84
+        ],
+        "BIPIA_code": [
+          92.86,
+          100.0
+        ]
+      },
+      "pooled": {
+        "n_benign": 1310,
+        "n_injection": 125,
+        "accuracy": 83.69,
+        "precision": 30.47,
+        "recall": 68.0,
+        "f1": 42.08,
+        "fpr": 14.81,
+        "roc_auc": 79.66
+      },
+      "notinject_by_category": {
+        "Technique Queries": 77.01,
+        "Multilingual": 100.0,
+        "Common Queries": 86.51,
+        "Virtual Creation": 88.1
+      },
+      "token_recheck": {
+        "n_trigger_words": 113,
+        "flagged_as_injection": 16,
+        "flagged_ratio": 14.16,
+        "flagged_words": [
+          "Above",
+          "COMMAND",
+          "Disregard",
+          "EVERYTHING",
+          "FORGET",
+          "INSTRUCTIONS",
+          "Ignore",
+          "MUST",
+          "Remember",
+          "USER",
+          "execute",
+          "ignore",
+          "illegal",
+          "pause",
+          "stop",
+          "unauthorized"
+        ]
+      },
+      "inputs_with_no_known_token": {
+        "NotInject_one": 24,
+        "NotInject_two": 30,
+        "NotInject_three": 29,
+        "WildGuard": 0,
+        "BIPIA_text": 0,
+        "BIPIA_code": 0
+      },
+      "top_injection_features": [
+        [
+          "instructions",
+          16.583
+        ],
+        [
+          "instruction",
+          15.96
+        ],
+        [
+          "directive",
+          13.184
+        ],
+        [
+          "action",
+          11.926
+        ],
+        [
+          "immediate",
+          11.404
+        ],
+        [
+          "task",
+          10.784
+        ],
+        [
+          "your",
+          10.773
+        ],
+        [
+          "directives",
+          10.456
+        ],
+        [
+          "ai",
+          10.413
+        ],
+        [
+          "urgent",
+          10.383
+        ],
+        [
+          "about to",
+          9.071
+        ],
+        [
+          "attention",
+          9.063
+        ],
+        [
+          "critical",
+          8.847
+        ],
+        [
+          "have just",
+          8.677
+        ],
+        [
+          "command",
+          8.192
+        ],
+        [
+          "content",
+          7.97
+        ],
+        [
+          "chatgpt",
+          7.961
+        ],
+        [
+          "alert",
+          7.836
+        ],
+        [
+          "ignore",
+          7.75
+        ],
+        [
+          "now",
+          7.67
+        ],
+        [
+          "meta",
+          7.549
+        ],
+        [
+          "vital",
+          7.273
+        ],
+        [
+          "variable",
+          7.175
+        ],
+        [
+          "crucial",
+          7.117
+        ],
+        [
+          "sensitive",
+          7.101
+        ]
+      ],
+      "fit_seconds": 41.7
+    },
+    "tfidf_word_svm": {
+      "train_size": 76735,
+      "in_distribution_acc": 96.65,
+      "summary": {
+        "Over-defense ACC (NotInject)": 87.61,
+        "Benign ACC (WildGuard)": 84.76,
+        "Injection ACC (BIPIA)": 75.66,
+        "Average": 82.68,
+        "Over-defense ACC (NotInject, English only)": 83.52
+      },
+      "per_set": {
+        "NotInject_one": 88.5,
+        "NotInject_two": 92.04,
+        "NotInject_three": 82.3,
+        "WildGuard": 84.76,
+        "BIPIA_text": 53.33,
+        "BIPIA_code": 98.0
+      },
+      "per_set_95ci": {
+        "NotInject_one": [
+          81.31,
+          93.15
+        ],
+        "NotInject_two": [
+          85.55,
+          95.75
+        ],
+        "NotInject_three": [
+          74.24,
+          88.24
+        ],
+        "WildGuard": [
+          82.36,
+          86.88
+        ],
+        "BIPIA_text": [
+          42.16,
+          64.18
+        ],
+        "BIPIA_code": [
+          89.5,
+          99.65
+        ]
+      },
+      "pooled": {
+        "n_benign": 1310,
+        "n_injection": 125,
+        "accuracy": 84.25,
+        "precision": 31.9,
+        "recall": 71.2,
+        "f1": 44.06,
+        "fpr": 14.5,
+        "roc_auc": 82.0
+      },
+      "notinject_by_category": {
+        "Technique Queries": 72.41,
+        "Multilingual": 100.0,
+        "Common Queries": 88.1,
+        "Virtual Creation": 92.86
+      },
+      "token_recheck": {
+        "n_trigger_words": 113,
+        "flagged_as_injection": 18,
+        "flagged_ratio": 15.93,
+        "flagged_words": [
+          "Above",
+          "COMMAND",
+          "Disregard",
+          "EVERYTHING",
+          "FORGET",
+          "INSTRUCTIONS",
+          "Ignore",
+          "MUST",
+          "Remember",
+          "USER",
+          "bypassing",
+          "execute",
+          "ignore",
+          "illegal",
+          "jailbreak",
+          "pause",
+          "unauthorized",
+          "unfiltered"
+        ]
+      },
+      "inputs_with_no_known_token": {
+        "NotInject_one": 24,
+        "NotInject_two": 30,
+        "NotInject_three": 29,
+        "WildGuard": 0,
+        "BIPIA_text": 0,
+        "BIPIA_code": 0
+      },
+      "fit_seconds": 33.1
+    },
+    "tfidf_char_lr": {
+      "train_size": 76735,
+      "in_distribution_acc": 96.91,
+      "summary": {
+        "Over-defense ACC (NotInject)": 82.01,
+        "Benign ACC (WildGuard)": 78.37,
+        "Injection ACC (BIPIA)": 61.0,
+        "Average": 73.79,
+        "Over-defense ACC (NotInject, English only)": 75.98
+      },
+      "per_set": {
+        "NotInject_one": 87.61,
+        "NotInject_two": 87.61,
+        "NotInject_three": 70.8,
+        "WildGuard": 78.37,
+        "BIPIA_text": 28.0,
+        "BIPIA_code": 94.0
+      },
+      "per_set_95ci": {
+        "NotInject_one": [
+          80.27,
+          92.47
+        ],
+        "NotInject_two": [
+          80.27,
+          92.47
+        ],
+        "NotInject_three": [
+          61.84,
+          78.39
+        ],
+        "WildGuard": [
+          75.67,
+          80.85
+        ],
+        "BIPIA_text": [
+          19.1,
+          39.04
+        ],
+        "BIPIA_code": [
+          83.78,
+          97.94
+        ]
+      },
+      "pooled": {
+        "n_benign": 1310,
+        "n_injection": 125,
+        "accuracy": 77.14,
+        "precision": 20.06,
+        "recall": 54.4,
+        "f1": 29.31,
+        "fpr": 20.69,
+        "roc_auc": 71.73
+      },
+      "notinject_by_category": {
+        "Technique Queries": 65.52,
+        "Multilingual": 100.0,
+        "Common Queries": 80.16,
+        "Virtual Creation": 85.71
+      },
+      "token_recheck": {
+        "n_trigger_words": 113,
+        "flagged_as_injection": 24,
+        "flagged_ratio": 21.24,
+        "flagged_words": [
+          "Above",
+          "COMMAND",
+          "Disregard",
+          "EVERYTHING",
+          "FORGET",
+          "INSTRUCTIONS",
+          "Ignore",
+          "MUST",
+          "PRIOR",
+          "Remember",
+          "USER",
+          "adversarial",
+          "bypassing",
+          "disregarding",
+          "execute",
+          "filtered",
+          "ignore",
+          "immoral",
+          "jailbreak",
+          "pause",
+          "restriction",
+          "stop",
+          "unauthorized",
+          "unfiltered"
+        ]
+      },
+      "inputs_with_no_known_token": {
+        "NotInject_one": 0,
+        "NotInject_two": 0,
+        "NotInject_three": 0,
+        "WildGuard": 0,
+        "BIPIA_text": 0,
+        "BIPIA_code": 0
+      },
+      "fit_seconds": 166.9
+    },
+    "tfidf_word_lr_noMOF": {
+      "train_size": 75973,
+      "in_distribution_acc": 96.05,
+      "summary": {
+        "Over-defense ACC (NotInject)": 86.73,
+        "Benign ACC (WildGuard)": 85.27,
+        "Injection ACC (BIPIA)": 73.0,
+        "Average": 81.67,
+        "Over-defense ACC (NotInject, English only)": 82.37
+      },
+      "per_set": {
+        "NotInject_one": 86.73,
+        "NotInject_two": 92.04,
+        "NotInject_three": 81.42,
+        "WildGuard": 85.27,
+        "BIPIA_text": 48.0,
+        "BIPIA_code": 98.0
+      },
+      "per_set_95ci": {
+        "NotInject_one": [
+          79.25,
+          91.79
+        ],
+        "NotInject_two": [
+          85.55,
+          95.75
+        ],
+        "NotInject_three": [
+          73.25,
+          87.51
+        ],
+        "WildGuard": [
+          82.9,
+          87.36
+        ],
+        "BIPIA_text": [
+          37.07,
+          59.13
+        ],
+        "BIPIA_code": [
+          89.5,
+          99.65
+        ]
+      },
+      "pooled": {
+        "n_benign": 1310,
+        "n_injection": 125,
+        "accuracy": 84.11,
+        "precision": 31.14,
+        "recall": 68.0,
+        "f1": 42.71,
+        "fpr": 14.35,
+        "roc_auc": 79.89
+      },
+      "notinject_by_category": {
+        "Technique Queries": 74.71,
+        "Multilingual": 100.0,
+        "Common Queries": 85.71,
+        "Virtual Creation": 88.1
+      },
+      "token_recheck": {
+        "n_trigger_words": 113,
+        "flagged_as_injection": 16,
+        "flagged_ratio": 14.16,
+        "flagged_words": [
+          "Above",
+          "COMMAND",
+          "Disregard",
+          "EVERYTHING",
+          "FORGET",
+          "INSTRUCTIONS",
+          "Ignore",
+          "MUST",
+          "Remember",
+          "USER",
+          "execute",
+          "ignore",
+          "illegal",
+          "pause",
+          "stop",
+          "unauthorized"
+        ]
+      },
+      "inputs_with_no_known_token": {
+        "NotInject_one": 24,
+        "NotInject_two": 30,
+        "NotInject_three": 29,
+        "WildGuard": 0,
+        "BIPIA_text": 0,
+        "BIPIA_code": 0
+      },
+      "top_injection_features": [
+        [
+          "instruction",
+          17.043
+        ],
+        [
+          "instructions",
+          16.786
+        ],
+        [
+          "directive",
+          13.067
+        ],
+        [
+          "action",
+          11.706
+        ],
+        [
+          "immediate",
+          11.393
+        ],
+        [
+          "your",
+          10.828
+        ],
+        [
+          "ai",
+          10.603
+        ],
+        [
+          "task",
+          10.504
+        ],
+        [
+          "urgent",
+          10.355
+        ],
+        [
+          "directives",
+          10.314
+        ],
+        [
+          "about to",
+          8.96
+        ],
+        [
+          "attention",
+          8.848
+        ],
+        [
+          "critical",
+          8.726
+        ],
+        [
+          "have just",
+          8.689
+        ],
+        [
+          "content",
+          8.076
+        ],
+        [
+          "command",
+          8.028
+        ],
+        [
+          "ignore",
+          7.996
+        ],
+        [
+          "alert",
+          7.747
+        ],
+        [
+          "chatgpt",
+          7.639
+        ],
+        [
+          "crucial",
+          7.577
+        ],
+        [
+          "now",
+          7.485
+        ],
+        [
+          "meta",
+          7.341
+        ],
+        [
+          "confidential",
+          7.269
+        ],
+        [
+          "disregard",
+          7.261
+        ],
+        [
+          "sensitive",
+          7.244
+        ]
+      ],
+      "fit_seconds": 44.3
+    },
+    "piguard": {
+      "summary": {
+        "Over-defense ACC (NotInject)": 88.5,
+        "Benign ACC (WildGuard)": 76.11,
+        "Injection ACC (BIPIA)": 68.34,
+        "Average": 77.65,
+        "Over-defense ACC (NotInject, English only)": 84.57
+      },
+      "per_set": {
+        "NotInject_one": 94.69,
+        "NotInject_two": 89.38,
+        "NotInject_three": 81.42,
+        "WildGuard": 76.11,
+        "BIPIA_text": 38.67,
+        "BIPIA_code": 98.0
+      },
+      "per_set_95ci": {
+        "NotInject_one": [
+          88.9,
+          97.54
+        ],
+        "NotInject_two": [
+          82.35,
+          93.82
+        ],
+        "NotInject_three": [
+          73.25,
+          87.51
+        ],
+        "WildGuard": [
+          73.33,
+          78.68
+        ],
+        "BIPIA_text": [
+          28.46,
+          49.98
+        ],
+        "BIPIA_code": [
+          89.5,
+          99.65
+        ]
+      },
+      "pooled": {
+        "n_benign": 1310,
+        "n_injection": 125,
+        "accuracy": 77.84,
+        "precision": 22.35,
+        "recall": 62.4,
+        "f1": 32.91,
+        "fpr": 20.69,
+        "roc_auc": 74.73
+      },
+      "notinject_by_category": {
+        "Technique Queries": 67.82,
+        "Multilingual": 100.0,
+        "Common Queries": 92.86,
+        "Virtual Creation": 95.24
+      },
+      "token_recheck": {
+        "n_trigger_words": 113,
+        "flagged_as_injection": 8,
+        "flagged_ratio": 7.08,
+        "flagged_words": [
+          "Begin",
+          "DELETE",
+          "Disregard",
+          "Ignore",
+          "activate",
+          "erase",
+          "execute",
+          "ignore"
+        ]
+      }
+    }
+  }
+}
